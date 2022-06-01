@@ -4,11 +4,11 @@
 
 Objetivo deste repositório é mostrar o provisionamento de recursos no OCI (Oracle Cloud Infrastructure), utilizando o Github Actions como pipeline e Terraform.
 
-### Conteúdo
-    - [O que é Terraform?](#o-q-terraform-)
-    - [Pré-requisitos](#pre-requisitos-)
-    - [Obtendo credenciais](#credenciais-)
-    - [Contanto](#contato-)
+## Conteúdo
+    - [O-que-é-Terraform?](#o-q-terraform)
+    - [Pré-requisitos](#pre-requisitos)
+    - [Obtendo credenciais](#credenciais)
+    - [Contato](#contato)
 
 
 ## O que é Terraform? 🗒
@@ -20,12 +20,12 @@ Através dos provedores do Terraform, ou seja, plugins que implementam tipos de 
 ## Pré-requisitos
 
 - [x] Criar uma conta no <a href="https://www.oracle.com/br/cloud/free/">Always Oracle Cloud Free</a>.
-- [x] Se você estiver trabalhando no Windows, instale o `<Git Bash>`
+- [x] Se você estiver trabalhando no Windows, instale o `Git Bash`
 
 ## Obtendo credenciais
 Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os passos abaixo:
 ```
-teste
+<img src="static/oci-screen1.png">
 ```
 
 
