@@ -36,15 +36,21 @@ Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os pass
 ```
 
 - Canto superior direito clique no menu Profile, em seguida clique no Tenancy.
-
-<p align="center"><img src="static/oci-screen1.png" width="80%" height="80%"></p>
+<p align="center"><img src="static/oci-screen1.png" alt="Profile Menu"></p>
 
 - Na página de informação do Tenancy, clique em Copy e salve o Tenancy OCID.
-<p align="center"><img src="static/oci-screen2.png" width="80%" height="80%"></p>
+<p align="center"><img src="static/oci-screen2.png" alt="Tenancy Information"></p>
+
 - Retorne ao menu Profile, e clique no nome de usuário. Na página de informação do usuário, clique em Copy e salve o User OCID.
-<p align="center"><img src="static/oci-screen3.png" width="80%" height="80%"></p>
+<p align="center"><img src="static/oci-screen3.png" alt="User Information"></p>
 
+- Agora no canto superior esquerdo, clique no hamburguer menu, vá em Identity & Security > Identity > Compartments. Selecione o compartment, clique em Copy e salve o Compartment OCID.
 
+<p align="center"><img src="static/oci-screen4.png" alt="User Information"></p>
+
+`Importante: O usuário deverá ter acesso como manage ao compartment selecionado`
+
+Estamos quase lá...
 
 Lista de ferramentas para pipeline
 https://www.lambdatest.com/blog/31-best-ci-cd-tools/
