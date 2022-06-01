@@ -20,13 +20,25 @@ Através dos provedores do Terraform, ou seja, plugins que implementam tipos de 
 ## Pré-requisitos
 
 - [x] Criar uma conta no <a href="https://www.oracle.com/br/cloud/free/">Always Oracle Cloud Free</a>.
-- [x] Se você estiver trabalhando no Windows, instale o `Git Bash`
+- [x] Se você estiver trabalhando no Windows, instale o `Git Bash`.
+- [x] Instalar o `OCI CLI`.
+- [x] Instalar o `Terraform`.
 
 ## Obtendo credenciais
-Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os passos abaixo:
+Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os passos abaixo. Você deverá obter as seguintes informações:
 ```
-<img src="static/oci-screen1.png">
+- Tenancy OCID
+- Region
+- Compartment OCID
+- User OCID
+- Username
+- User Auth Token
 ```
+
+- Canto superior direito clique no menu Profile, em seguida clique no Tenancy
+
+<p align="center"><img src="static/oci-screen1.png"></p>
+
 
 
 
