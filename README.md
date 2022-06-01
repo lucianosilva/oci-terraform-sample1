@@ -35,10 +35,14 @@ Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os pass
 - User Auth Token
 ```
 
-- Canto superior direito clique no menu Profile, em seguida clique no Tenancy
+- Canto superior direito clique no menu Profile, em seguida clique no Tenancy.
 
-<p align="center"><img src="static/oci-screen1.png"></p>
+<p align="center"><img src="static/oci-screen1.png" width="80%" height="80%"></p>
 
+- Na página de informação do Tenancy, clique em Copy e salve o Tenancy OCID.
+<p align="center"><img src="static/oci-screen2.png" width="80%" height="80%"></p>
+- Retorne ao menu Profile, e clique no nome de usuário. Na página de informação do usuário, clique em Copy e salve o User OCID.
+<p align="center"><img src="static/oci-screen3.png" width="80%" height="80%"></p>
 
 
 
