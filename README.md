@@ -4,13 +4,10 @@
 
 Objetivo deste repositório é mostrar o provisionamento de recursos no OCI (Oracle Cloud Infrastructure), utilizando o Github Actions como pipeline e Terraform.
 
-## Conteúdo
-    
-    - [Terraform](#o-que-é-terraform-)
-    - [Pré-requisitos](#pré-requisitos)
-    - [Obtendo credenciais](#obtendo-credenciais)
-    - [Contato](#contato)
-
+- [Terraform](#o-que-é-terraform-)
+- [Pré-requisitos](#pré-requisitos)
+- [Obtendo credenciais](#obtendo-credenciais)
+- [Contato](#contato)
 
 ## O que é Terraform? 🗒
 Terraform é uma ferramenta de software livre de "infraestrutura como código" criada pela HashiCorp.
