@@ -5,7 +5,8 @@
 Objetivo deste repositório é mostrar o provisionamento de recursos no OCI (Oracle Cloud Infrastructure), utilizando o Github Actions como pipeline e Terraform.
 
 ## Conteúdo
-    - [O-que-é-Terraform?](#o-q-terraform)
+    
+    - [Terraform](#-O-Que-é-Terraform?)
     - [Pré-requisitos](#pre-requisitos)
     - [Obtendo credenciais](#credenciais)
     - [Contato](#contato)
