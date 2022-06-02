@@ -41,12 +41,15 @@ Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os pass
 ```
 
 - Canto superior direito clique no menu Profile, em seguida clique no Tenancy.
+
 ![Profile Menu](static/oci-screen1.png)
 
 - Na página de informação do Tenancy, clique em Copy e salve o `Tenancy OCID`.
+
 ![Tenancy Information](static/oci-screen2.png)
 
 - Retorne ao menu Profile, e clique no nome de usuário. Na página de informação do usuário, clique em Copy e salve o `User OCID`.
+
 ![User Information](static/oci-screen3.png)
 
 - Agora no canto superior esquerdo, clique no hamburguer menu, vá em `Identity & Security > Identity > Compartments`. Selecione o compartment, clique em Copy e salve o `Compartment OCID`.
