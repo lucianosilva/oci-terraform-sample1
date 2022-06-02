@@ -7,8 +7,8 @@ Objetivo deste repositório é mostrar o provisionamento de recursos no OCI (Ora
 ## Conteúdo
     
     - [Terraform](#o-que-é-terraform-)
-    - [Pré-requisitos](#pre-requisitos)
-    - [Obtendo credenciais](#credenciais)
+    - [Pré-requisitos](#pré-requisitos)
+    - [Obtendo credenciais](#obtendo-credenciais)
     - [Contato](#contato)
 
 
