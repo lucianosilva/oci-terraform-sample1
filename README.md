@@ -15,6 +15,12 @@ Permite aos desenvolvedores usar uma linguagem de configuração de alto nível 
 
 Através dos provedores do Terraform, ou seja, plugins que implementam tipos de recursos capazes de comunicar com o ambiente cloud do provedor. Sendo assim, o Terraform é capaz de implementar em ambientes de cloud híbrida ou multicloud.
 
+## Pipeline
+Github Actions ...
+
+Lista de ferramentas para pipeline
+https://www.lambdatest.com/blog/31-best-ci-cd-tools/
+
 ## Pré-requisitos
 
 - [x] Criar uma conta no <a href="https://www.oracle.com/br/cloud/free/">Always Oracle Cloud Free</a>.
@@ -23,6 +29,7 @@ Através dos provedores do Terraform, ou seja, plugins que implementam tipos de 
 - [x] Instalar o `Terraform`.
 
 ## Obtendo credenciais
+Para se comunicar através OCI CLI com o OCI será necessário obter algumas informações da conta cloud, isto deverpa
 Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os passos abaixo. Você deverá obter as seguintes informações:
 ```
 - Tenancy OCID
@@ -34,27 +41,60 @@ Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os pass
 ```
 
 - Canto superior direito clique no menu Profile, em seguida clique no Tenancy.
-<p align="center"><img src="static/oci-screen1.png" alt="Profile Menu"></p>
+![Profile Menu](static/oci-screen1.png)
 
 - Na página de informação do Tenancy, clique em Copy e salve o `Tenancy OCID`.
-<p align="center"><img src="static/oci-screen2.png" alt="Tenancy Information"></p>
+![Tenancy Information](static/oci-screen2.png)
 
 - Retorne ao menu Profile, e clique no nome de usuário. Na página de informação do usuário, clique em Copy e salve o `User OCID`.
-<p align="center"><img src="static/oci-screen3.png" alt="User Information"></p>
+![User Information](static/oci-screen3.png)
 
 - Agora no canto superior esquerdo, clique no hamburguer menu, vá em `Identity & Security > Identity > Compartments`. Selecione o compartment, clique em Copy e salve o `Compartment OCID`.
 
-<p align="center"><img src="static/oci-screen4.png" alt="Compartment Information"></p>
+![Compartment Information](static/oci-screen4.png)
 
 `Importante: O usuário deverá ter acesso como manage ao compartment selecionado`
 
 - Clique no hamburguer menu, vá em Governance & Administration > Region Management, copie e salve o `Region`.
 
-<p align="center"><img src="static/oci-screen5.png" alt="Region Information"></p>
+![Region Information](static/oci-screen5.png)
 
 
-Lista de ferramentas para pipeline
-https://www.lambdatest.com/blog/31-best-ci-cd-tools/
+## Gerando Auth Token
+
+A partir do Git Bash execute os comandos a seguir para gerar as chaves privada e pública.
+
+```
+$ mkdir .oci
+$ openssl genrsa -out .oci/oci_api_key.pem 2048
+$ chmod go-rwx .oci/oci_api_key.pem
+$ openssl rsa -pubout -in .oci/oci_api_key.pem -out .oci/oci_api_key_public.pem
+$
+$ ls -ltr .oci/
+total 5
+-rw-r--r-- 1 lcarmo 197121 1698 Jun  2 14:02 oci_api_key.pem
+-rw-r--r-- 1 lcarmo 197121  460 Jun  2 14:04 oci_api_key_public.pem
+```
+
+<p>Agora copie o conteúdo da chave pública para a API Key do usuário.</p>
+
+```
+$ cat .oci/oci_api_key_public.pem
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApbexdMCzYBGXS5bpXOO+
+Rzg+YXXVg7/KONoR3n0glxd9aiJ8cdNzxOpC2en0fE6n/chn+V+E3PvHaq1r3zd2
+aWcaJDJyB1GXS9nc/g2MLTbReuznf5JAOz+zhj9Aa6cKe57ms3Wds7qc5AcSzKWn
+JcXqfG2R1HAIXm7VuBn7glK4RzfCkK5O5HLokZpjivydygGJXdEo0lt40uG2QFKR
+/eQe2SSxwaJW6l3V0V5BgP7W47mANG38aoeUtJwDLt6tseoP6yFChoWPfxRYkFzH
+NOpOJ+L91IM2agsVGINm8CM2qtdVlSwWsBij/zCqffDLhHRcyjPwJwTx7cFg3FE3
+MQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+<p>Retorne ao OCI e vá para o menu `Identity & Security > Identity > Users`, selecione o usuário e vá para o menu no canto inferior esquerdo `Resources > API Keys` e adicione a nova chave pública.</p>
+
+![API Keys](static/oci-screen6.png)
+
 
 ### Contato
 
