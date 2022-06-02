@@ -31,11 +31,13 @@ https://www.lambdatest.com/blog/31-best-ci-cd-tools/
 ## Obtendo credenciais
 Para se comunicar através OCI CLI com o OCI será necessário obter algumas informações da conta cloud, isto deverpa
 Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os passos abaixo. Você deverá obter as seguintes informações:
+
 ```
 - Tenancy OCID
 - Region
 - Compartment OCID
 - User OCID
+- Fingerprint
 - Username
 - User Auth Token
 ```
@@ -65,7 +67,7 @@ Acesse sua conta no OCI (http://cloud.oracle.com), efetue o login e siga os pass
 
 ## Gerando Auth Token
 
-A partir do Git Bash execute os comandos a seguir para gerar as chaves privada e pública.
+Execute os comandos a seguir para gerar as chaves privada e pública. Se você estiver trabalhando no *Windows utilize o Git Bash*.
 
 ```
 $ mkdir .oci
@@ -94,9 +96,32 @@ MQIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-<p>Retorne ao OCI e vá para o menu `Identity & Security > Identity > Users`, selecione o usuário e vá para o menu no canto inferior esquerdo `Resources > API Keys` e adicione a nova chave pública.</p>
+<p>Retorne ao console do OCI e vá para o menu `Identity & Security > Identity > Users`, clique no usuário e vá para o menu no canto inferior esquerdo `Resources > API Keys` e adicione a nova chave pública, conforme a imagem abaixo.</p>
 
 ![API Keys](static/oci-screen6.png)
+
+Com isso feito, você terá acesso ao **Fingerprint** copie e salve este valor.
+Ainda nessa mesma sessão, no canto inferior esquerdo clique no menu `Auth Tokens` e crie um novo Token, copie e salve o conteúdo para ser utilizado como `User Auth Token`.
+
+## Configurando variáveis do Terraform
+
+```
+touch ~/.bash_profile
+
+echo "export TF_VAR_user_ocid=ocid1.user.oc1..<HIDDEN>" >> ~/.bash_profile
+echo "export TF_VAR_fingerprint=29:<HIDDEN>:2a" >> ~/.bash_profile
+echo "export TF_VAR_region=sa-saopaulo-1" >> ~/.bash_profile
+echo "export TF_VAR_tenancy_ocid=ocid1.tenancy.oc1..<HIDDEN>" >> ~/.bash_profile
+echo "export TF_VAR_compartment_ocid=ocid1.compartment.oc1..<HIDDEN>" >> ~/.bash_profile
+echo "export TF_VAR_private_key_path=~/.oci/oci_api_key.pem" >> ~/.bash_profile
+echo "export TF_VAR_oci_username=oracleidentitycloudservice/username@X.com" >> ~/.bash_profile
+echo "export TF_VAR_oci_user_authtoken=<HIDDEN>" >> ~/.bash_profile
+
+. ~/.bash_profile
+```
+
+## Play no Terraform
+
 
 
 ### Contato
